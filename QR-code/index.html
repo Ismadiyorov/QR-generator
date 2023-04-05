@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR-code</title>
+    <link rel="shortcut icon" href="/qr.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&family=Labrada:ital,wght@0,100;0,400;1,200&family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+background: rgb(97,208,255);
+background: linear-gradient(90deg, rgba(97,208,255,1) 0%, rgba(179,217,255,1) 51%, rgba(97,208,255,1) 100%);
+
+}
+.app{
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    
+}
+img{
+    margin-top: 110px;
+}
+input{
+    margin-top: 20px;
+    width: 200px;
+    height: 40px;
+    border-radius: 30px;
+    font-size: 20px;
+    border: 1px solid #000;
+/* background: rgb(141, 191, 242); */
+/* background: none; */
+background: rgb(151,224,255);
+background: linear-gradient(90deg, rgba(151,224,255,1) 0%, rgba(240,248,255,1) 50%, rgba(151,224,255,1) 100%);
+    text-align: center;
+    color: #000;
+    font-family: 'IBM Plex Mono', monospace;
+font-family: 'Labrada', serif;
+font-family: 'Montserrat', sans-serif;
+}
+button{
+    margin-top: 25px;
+    width: 200px;
+    height: 50px;
+    font-size: 25px;
+background: rgb(240,248,255);
+background: linear-gradient(90deg, rgba(240,248,255,1) 0%, rgba(97,208,255,1) 51%, rgba(240,248,255,1) 100%);
+border-radius: 30px;
+border: none;
+color: #000;
+font-family: 'IBM Plex Mono', monospace;
+font-family: 'Labrada', serif;
+font-family: 'Montserrat', sans-serif;
+}
+h1{
+    font-size: 50px;
+    margin-top: 70px;
+    font-family: 'IBM Plex Mono', monospace;
+font-family: 'Labrada', serif;
+font-family: 'Montserrat', sans-serif;
+}
+
+    </style>
+</head>
+<body>
+<div class="app">
+    <h1>QR-generator</h1>
+    <img src="" alt=""> <br>
+    <input type="text"> <br>
+    <button>Generate</button>
+</div>
+    <script>
+        const image = document.querySelector('img'),
+        input = document.querySelector('input'),
+        button = document.querySelector('button'),
+        api = `https://api.qrserver.com/v1/`,
+        api2 = `create-qr-code/?size=180x180&data=`;
+        button.addEventListener('click', () => {
+            image.src = `${api}${api2}${input.value}`;
+        });
+    </script>
+</body>
+</html>
